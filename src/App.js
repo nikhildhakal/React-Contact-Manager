@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
- 		<Header branding = "Contact Manager" />
+ 		<Header />
  		<Contact 
  			name = "Nikhil Dhakal"
  			email = "nikhil.webdev2020@gmail"
