@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from './components/Contact';
+import Contacts from './components/Contacts';
 import Header from './components/Header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,16 +10,7 @@ function App() {
     <div className="App">
  		<Header />
  		<div className="container">
-			<Contact 
-				name = "Nikhil Dhakal"
-				email = "nikhil.webdev2020@gmail"
-				phone = "+977-9841377539" 
-			/>
-			<Contact 
-				name = "Neeru Dhakal"
-				email = "dhakalneeru@hotmail.com"
-				phone = "+977-9851042790" 
-			/>
+			<Contacts />
  		</div>
     </div>
   );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Contact extends Component {
 	render() {
-		const { name, email, phone } = this.props; // Use of destructure
+		const { name, email, phone } = this.props.contact; // Use of destructure
 
 		return (
 			<div className="card card-body mb-3">
@@ -18,9 +18,7 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
-	name: PropTypes.string.isRequired,
-	email: PropTypes.string.isRequired,
-	phone: PropTypes.string.isRequired,
+	contact: PropTypes.object.isRequired,
 }
 
 export default Contact;
