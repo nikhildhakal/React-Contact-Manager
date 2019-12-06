@@ -23,16 +23,14 @@ class Contacts extends Component {
 		const { contacts } = this.state;
 
 		return (
-			<div>
-				{
-					contacts.map(contact =>	(
-						<Contact 
-							key = {contact.id}
-							contact = { contact }
-						/>
-					))
-				}
-			</div>
+			<React.Fragment>
+				{contacts.map(contact =>	(
+					<Contact 
+						key = {contact.id}
+						contact = { contact }
+					/>
+				))}
+			</React.Fragment>
 		)
 	}
 }
