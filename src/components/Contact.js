@@ -6,20 +6,27 @@ class Contact extends Component {
 		showContactInfo: false
 	}
 
-	onShowClick = e => {
+	handleClick = e => {
 		this.setState({
 			showContactInfo: !this.state.showContactInfo
 		})
-		console.log(this.state);
 	};
 
 	render() {
-		const { name, email, phone } = this.props.contact; // Use of destructure
+		const { id, name, email, phone } = this.props.contact; // Use of destructure, props come from Contacts
 		const { showContactInfo } = this.state; // Get showContactInfo from state
 
 		return (
 			<div className="card card-body mb-3">
-				<h4>{ name } <i onClick={this.onShowClick} className="fas fa-sort-down"></i></h4>
+				<h4>
+					{ name } <i onClick={this.handleClick} className="fas fa-sort-down"></i>
+					<button 
+						onClick={() => this.props.onDelete(id)} 
+						style={{float:'right'}} 
+						className="btn btn-danger btn-sm">
+						&times;
+					</button>
+				</h4>
 				{ showContactInfo ? (
 					<ul className="list-group">
 						<li className="list-group-item">Email: { email }</li>

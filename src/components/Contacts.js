@@ -15,9 +15,21 @@ class Contacts extends Component {
 				name: 'Neeru Dhakal',
 				email: 'dhakalneeru@hotmail.com',
 				phone: '+977-9851042790'
+			},
+			{
+				id: 3,
+				name: 'Punya Prasad Dhakal',
+				email: 'punyadhakal@gmail.com',
+				phone: '+977-9841300275'
 			}
 		]
 	};
+
+	//Raising and handling events
+	handleDelete = (contactId) => {
+		const contacts = this.state.contacts.filter(contact => contact.id !== contactId);
+		this.setState({ contacts });
+	}
 
 	render() {
 		const { contacts } = this.state;
@@ -28,6 +40,7 @@ class Contacts extends Component {
 					<Contact 
 						key = {contact.id}
 						contact = { contact }
+						onDelete = {this.handleDelete}
 					/>
 				))}
 			</React.Fragment>

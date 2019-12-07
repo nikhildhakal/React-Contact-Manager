@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Stateless Functional Component
 const Header = props => {
 	const { branding } = props; // Use of destructure
 	return (
