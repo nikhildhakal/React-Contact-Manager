@@ -7,19 +7,27 @@ class ContactForm extends Component {
     phone: ""
   };
 
+  onSubmit = e => {
+    e.preventDefault();
+  };
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
+    const { name, email, phone } = this.state;
     return (
       <div className="card mb-3">
         <div className="card-header">Add Contact</div>
         <div className="card-body">
-          <form>
+          <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name:</label>
               <input
                 type="text"
                 name="name"
-                value={this.state.name}
+                value={name}
                 className="form-control"
+                placeholder="Enter Name ..."
+                onChange={this.onChange}
               />
             </div>
             <div className="form-group">
@@ -27,8 +35,10 @@ class ContactForm extends Component {
               <input
                 type="email"
                 name="email"
-                value={this.state.email}
+                value={email}
                 className="form-control"
+                placeholder="Enter Email ..."
+                onChange={this.onChange}
               />
             </div>
             <div className="form-group">
@@ -36,14 +46,17 @@ class ContactForm extends Component {
               <input
                 type="text"
                 name="phone"
-                value={this.state.phone}
+                value={phone}
                 className="form-control"
+                placeholder="Enter Phone ..."
+                onChange={this.onChange}
               />
             </div>
             <input
               type="submit"
               name="submit"
               className="btn btn-secondary btn-sm btn-block"
+              onChange={this.onChange}
             />
           </form>
         </div>
